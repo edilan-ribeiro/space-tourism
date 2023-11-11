@@ -1,7 +1,8 @@
 //FONTS
 
 $bellefair: var(--font-bellefair), serif;
-$barlow: var(--font-barlow-condensed), sans-serif;
+$barlowC: var(--font-barlow-condensed), sans-serif;
+$barlowReg: var(--font-barlow-regular), sans-serif;
 
 //COLORS 
 
@@ -12,3 +13,9 @@ $white: #FFFFFF;
 //SCREEN SIZES
 $tablet-breakpoint: 768px;
 $mobile-breakpoin: 375px;
+
+//HOME BACKGROUNDS
+
+$bg-home-desktop: url('/assets/home/background-home-desktop.jpg');
+$bg-home-tablet: url('/assets/home/background-home-tablet.jpg');
+$bg-home-mobile: url('/assets/home/background-home-mobile.jpg')
