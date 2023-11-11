@@ -1,0 +1,80 @@
+@use "../variables";
+@use "../partials/titles";
+@use "../partials/paragraphs";
+@use "../partials/containers";
+
+.homeBg {
+	background-image: variables.$bg-home-desktop;
+	background-repeat: no-repeat;
+	background-size: cover;
+	// mix-blend-mode: screen;
+
+	@media (max-width: 768px) {
+		background-image: variables.$bg-home-tablet;
+	}
+
+	@media (max-width: 375px) {
+		background-image: variables.$bg-home-mobile;
+	}
+}
+
+.home {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+}
+
+//CONTAINERS
+
+.mainContainer {
+	@include containers.flex-items-center;
+	gap: 59%;
+	margin: 400px 0 130px 145px;
+	transition: 0.1s ease-in-out;
+
+	@media (min-width: 1520px) {
+		gap: 68%;
+	}
+
+	@media (min-width: 1660px) {
+		gap: 80%;
+	}
+}
+
+.rightContainer {
+	margin-top: 100px;
+
+	.link{
+		width: 274px;
+		height: 274px;
+		border-radius: 50%;
+		background-color: variables.$white;
+		color: variables.$dark-active-text;
+		font-family: variables.$bellefair;
+		font-size: 32px;
+		letter-spacing: 2px;
+		text-align: center;
+		text-transform: uppercase;
+		@include containers.flex-all-center;
+		outline: solid 5px transparent;
+
+		&:hover {
+			outline: solid 75px (rgba(255, 255, 255, 0.1036));
+			transition: 0.3s ease-in-out;
+		}
+	}
+}
+
+//TITLE
+
+.homeHeadingBigWord {
+	@include titles.headings;
+	font-size: 15rem;
+	padding: 24px 0;
+}
+
+.homeHeadingSmallWord {
+	@include titles.pagesTitle;
+	color: variables.$light-blue;
+}
