@@ -1,4 +1,4 @@
-@use '../../styles/variables';
+@use '@/styles/variables';
 
 .header {
     width: 100%;
@@ -21,7 +21,7 @@
 .navMenu {
     display: flex;
     color: variables.$white;
-    font-family: variables.$barlow;
+    font-family: variables.$barlowC;
     letter-spacing: 2.7px;
     height: 100%;
     align-items: center;
