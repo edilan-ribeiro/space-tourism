@@ -1,24 +1,28 @@
-import styles from "@/styles/home.module.scss"
+import styles from "@/styles/pageStyles/home.module.scss"
+import Link from "next/link"
 
-export default function Home() { 
-  return (
-    <section className={`${styles.background} ${styles.home}`}>
-      <div>
-
-      <p>
-        So, you want to travel to
-        Space
-        Let’s face it; if you want to go to space, you might as well genuinely go to 
-        outer space and not hover kind of on the edge of it. Well sit back, and relax 
-        because we’ll give you a truly out of this world experience!
-
-        Explore
-      </p>
-      </div>
-      <div>
-      </div>
-
-
-    </section>
-  )
+export default function Home() {
+	return (
+		<div className={`${styles.homeBg} ${styles.home}`}>
+			<div className={styles.mainContainer}>
+				<div className={styles.leftContainer}>
+					<h1 className={styles.homeHeadingSmallWord}>
+						So, you want to travel to
+					</h1>
+					<h2 className={styles.homeHeadingBigWord}>Space</h2>
+					<p className={styles.mainText}>
+						Let’s face it; if you want to go to space, you might as well
+						genuinely go to outer space and not hover kind of on the edge of it.
+						Well sit back, and relax because we’ll give you a truly out of this
+						world experience!
+					</p>
+				</div>
+				<div className={styles.rightContainer}>
+					<Link href={"/destination"} className={styles.link}>
+						<p>explore</p>
+					</Link>
+				</div>
+			</div>
+		</div>
+	)
 }
