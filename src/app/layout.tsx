@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import "@/styles/globals.scss"
-import { Bellefair, Barlow_Condensed } from "next/font/google"
+import { Bellefair, Barlow_Condensed, Barlow } from "next/font/google"
 import { Header } from "@/components/header/header"
 
 const bellefair = Bellefair({
@@ -17,6 +17,13 @@ const barlow_condensed = Barlow_Condensed({
 	display: "swap",
 })
 
+const barlow = Barlow({
+	weight: ["400"],
+	subsets: ["latin"],
+	variable: "--font-barlow-regular",
+	display: "swap",
+})
+
 export const metadata: Metadata = {
 	title: "Space tourism",
 	description: "Space tourism multi-page website",
@@ -28,7 +35,7 @@ export default function RootLayout({
 	children: React.ReactNode
 }) {
 	return (
-		<html className={`${bellefair.variable} ${barlow_condensed.variable}`}>
+		<html className={`${bellefair.variable} ${barlow_condensed.variable} ${barlow.variable}`}>
 			<body>
 				<Header />
 				<main>{children}</main>
