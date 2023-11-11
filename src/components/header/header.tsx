@@ -16,7 +16,7 @@ export const Header = () => {
 					<ul>
 						{menuItemId.map((id, index) => {                                                   
 							return (
-                                <Link href={`/${menuTitle[index] === 'home' ? '' : menuTitle[index]}`}>
+                                <Link key={index}href={`/${menuTitle[index] === 'home' ? '' : menuTitle[index]}`}>
 								<li key={index}>
 									<span>{id}</span> {menuTitle[index]}
 								</li>
