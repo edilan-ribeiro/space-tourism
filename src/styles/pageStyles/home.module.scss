@@ -2,12 +2,12 @@
 @use "../partials/titles";
 @use "../partials/paragraphs";
 @use "../partials/containers";
+@use "@/styles/partials/animations";
 
-.homeBg {
+@mixin homeBg {
 	background-image: variables.$bg-home-desktop;
 	background-repeat: no-repeat;
 	background-size: cover;
-	// mix-blend-mode: screen;
 
 	@media (max-width: 768px) {
 		background-image: variables.$bg-home-tablet;
@@ -23,6 +23,7 @@
 	height: 100vh;
 	display: flex;
 	align-items: center;
+	@include homeBg;
 }
 
 //CONTAINERS
@@ -33,19 +34,37 @@
 	margin: 400px 0 130px 145px;
 	transition: 0.1s ease-in-out;
 
+	@media (min-width: 1660px) {
+		gap: 80%;
+	}
+
 	@media (min-width: 1520px) {
 		gap: 68%;
 	}
 
-	@media (min-width: 1660px) {
-		gap: 80%;
+	@media (max-width: 1350px) {
+		gap: 50%;
+	}
+
+	@media (max-width: 1270px) {
+		gap: 35%;
+	}
+
+	@media (max-width: 1160px) {
+		gap: 28%;
+		transform: scale(0.85);
+	}
+
+	@media (max-width: 1080px) {
+		gap: 23%;		
 	}
 }
 
 .rightContainer {
 	margin-top: 100px;
 
-	.link{
+	.link {
+		@include containers.flex-all-center;
 		width: 274px;
 		height: 274px;
 		border-radius: 50%;
@@ -56,12 +75,12 @@
 		letter-spacing: 2px;
 		text-align: center;
 		text-transform: uppercase;
-		@include containers.flex-all-center;
-		outline: solid 5px transparent;
+		outline: solid 5px transparent;		
 
 		&:hover {
 			outline: solid 75px (rgba(255, 255, 255, 0.1036));
 			transition: 0.3s ease-in-out;
+			animation: pulse 1.7s infinite;
 		}
 	}
 }
@@ -72,6 +91,8 @@
 	@include titles.headings;
 	font-size: 15rem;
 	padding: 24px 0;
+	display: flex;
+	flex-direction: column;
 }
 
 .homeHeadingSmallWord {
