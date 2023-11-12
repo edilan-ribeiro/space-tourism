@@ -1,0 +1,26 @@
+@use "../variables";
+
+@mixin headings {
+	color: variables.$white;
+	font-family: variables.$bellefair;
+	text-transform: uppercase;
+}
+
+@mixin pagesTitle {
+	color: variables.$white;
+	font-family: variables.$barlowC;
+	text-transform: uppercase;
+	font-size: 2.8rem;
+	letter-spacing: 4.725px;
+	
+
+	span {
+		margin-right: 28px;
+		font-weight: 700;
+		opacity: 0.25;
+	}
+}
+
+//HOME
+
+// PAGES
