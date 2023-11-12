@@ -3,13 +3,13 @@ import Link from "next/link"
 
 export default function Home() {
 	return (
-		<div className={`${styles.homeBg} ${styles.home}`}>
+		<div className={styles.home}>
 			<div className={styles.mainContainer}>
 				<div className={styles.leftContainer}>
 					<h1 className={styles.homeHeadingSmallWord}>
 						So, you want to travel to
+					<strong className={styles.homeHeadingBigWord}>Space</strong>
 					</h1>
-					<h2 className={styles.homeHeadingBigWord}>Space</h2>
 					<p className={styles.mainText}>
 						Let’s face it; if you want to go to space, you might as well
 						genuinely go to outer space and not hover kind of on the edge of it.
