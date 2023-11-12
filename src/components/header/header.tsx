@@ -1,6 +1,6 @@
 import Image from "next/image"
 import logo from "../../../public/assets/shared/logo.svg"
-import styles from "./header.module.scss"
+import styles from "./Header.module.scss"
 import Link from 'next/link'
 
 export const Header = () => {
