@@ -1,0 +1,40 @@
+@use "../variables";
+@use "../partials/containers";
+
+@mixin destinationBg {
+	background-image: variables.$bg-destination-desktop;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	@media (max-width: 768px) {
+		background-image: variables.$bg-destination-tablet;
+	}
+
+	@media (max-width: 375px) {
+		background-image: variables.$bg-destination-mobile;
+	}
+}
+
+.destinationPageContainer {
+	width: 100vw;
+	height: 100vh;
+	@include destinationBg;
+	@include containers.flex-all-center;
+}
+
+.content{
+	width: 80vw;
+	height: 75vh;	
+	overflow: hidden;
+	margin-top: 200px;
+	
+	@media (max-width: 1350px){
+		width: 90vw;
+		margin-left: 50px ;
+	}
+	@media (max-width: 1150px){
+		width: 100vw;
+		margin-left: 0;
+	}
+}
+
