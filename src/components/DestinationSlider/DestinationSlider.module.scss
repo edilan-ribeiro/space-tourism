@@ -1,0 +1,110 @@
+@use "@/styles/variables";
+@use "@/styles/partials/animations";
+@use "@/styles/partials/titles";
+@use "@/styles/partials/paragraphs";
+
+.contentBox {
+	display: flex;
+	gap: 14%;
+	margin-left: 90px;
+	flex-shrink: 1;
+	animation: slideFade ease-in-out 1s;
+
+	@media (min-width: 1560px) {
+		gap: 20%;
+	}
+
+	@media (min-width: 1660px) {
+		gap: 25%;
+	}
+
+	@media (max-width: 1415px) {
+		transform: scale(0.9);
+	}
+
+	@media (max-width: 1150px) {
+		margin-left: -20px;
+	}
+}
+
+.nav {
+	@include animations.menuAnimation;
+
+	display: flex;
+	height: 34px;
+	justify-content: flex-end;
+	gap: 36px;
+	color: variables.$light-blue;
+	font-family: variables.$barlowC;
+	letter-spacing: 2.7px;
+	font-size: 1.6rem;
+	text-transform: uppercase;
+	margin-top: 64px;
+	padding-right: 15.3%;
+
+	.activeNav::before{
+		transform: scaleX(1)
+	}
+
+	@if #{&} == attr(data-slide) {
+		transform: scaleX(1);
+	}
+
+	@media (min-width: 1366px) {
+		padding-right: 15.2%;
+	}
+
+	@media (min-width: 1536px) {
+		padding-right: 19.7%;
+	}
+
+	@media (min-width: 1900px) {
+		padding-right: 22.7%;
+	}
+
+	@media (min-width: 2000px) {
+		padding-right: 35.7%;
+	}
+
+	@media (max-width: 1024px) {
+		margin-left: -20px;
+	}
+}
+
+.imageSide {
+	margin-top: 28px;
+}
+
+.infoSide {
+	.destinationTitle {
+		@include titles.headings;
+		font-size: 10rem;
+		margin-top: 37px;
+	}
+
+	span {
+		display: block;
+		height: 1px;
+		background-color: #383b4b;
+		margin-top: 55px;
+	}
+
+	.travelInfo {
+		display: flex;
+		gap: 80px;
+		margin-top: 30px;
+
+		h3 {
+			@include titles.pagesTitle;
+			font-size: 1.4rem;
+			letter-spacing: 2.362px;
+			color: variables.$light-blue;
+		}
+
+		h4 {
+			@include titles.headings;
+			font-size: 2.8rem;
+			margin-top: 12px;
+		}
+	}
+}
