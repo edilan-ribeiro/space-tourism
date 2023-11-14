@@ -1,0 +1,69 @@
+@use "@/styles/variables";
+@use "@/styles/partials/animations";
+@use "@/styles/partials/titles";
+@use "@/styles/partials/paragraphs";
+
+.contentBox {
+	display: flex;
+	gap: 15%;
+	animation: slideFade ease-in-out 0.7s;
+
+	@media (min-width: 1560px) {
+		gap: 20%;
+	}
+
+	@media (min-width: 1660px) {
+		gap: 25%;
+	}
+
+	@media (max-width: 1415px) {
+		gap: 10%;
+	}
+}
+
+.crewTitles {
+	@include titles.headings;
+
+	h2 {
+		font-size: 3.2rem;
+		opacity: 0.5042;
+		margin-top: 155px;
+	}
+
+	h3 {
+		margin-top: 15px;
+		margin-bottom: 30px;
+		font-size: 5.6rem;
+	}
+}
+
+.imageContainer {
+	margin-top: -45px;
+	max-width: 668px;
+	height: 728px;
+	overflow: hidden;
+
+	img{
+		width: 100%;
+	}
+}
+
+.creNav {
+	display: flex;
+	gap: 33px;
+	margin-top: -110px;
+
+	li {
+		width: 15px;
+		height: 15px;
+		border-radius: 50%;
+		background-color: variables.$white;
+		cursor: pointer;
+		opacity: 0.2;
+	}
+
+	.activeNav {
+		opacity: 1;
+		transition: 0.3s ease-in-out;
+	}
+}
