@@ -1,7 +1,7 @@
 @use '../variables';
-@use "../partials/containers";
+@use '../partials/containers';
 
-@mixin destinationBg {
+@mixin crewBg {
 	background-image: variables.$bg-crew-desktop;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -18,21 +18,21 @@
 .crewPageContainer {
 	width: 100vw;
 	height: 100vh;
-	@include destinationBg;
+	@include crewBg;
 	@include containers.flex-all-center;
 }
 
-.content{
+.content {
 	width: 80vw;
-	height: 78vh;	
+	height: 78vh;
 	overflow: visible;
 	margin-top: 200px;
-	
-	@media (max-width: 1350px){
+
+	@media (max-width: 1350px) {
 		width: 90vw;
-		margin-left: 50px ;
+		margin-left: 50px;
 	}
-	@media (max-width: 1150px){
+	@media (max-width: 1150px) {
 		width: 100vw;
 		margin-left: 0;
 	}
