@@ -1,14 +1,15 @@
-export default function Crew() {
-    return (
-      <main>
-        <p style={{color:"white"}}>
-          So, you want to travel to
-          Space
-         wwwwwww
-  
-          Explore
-        </p>
-      </main>
-    )
-  }
-  
+import styles from "@/styles/pageStyles/crew.module.scss"
+import { PageTitle } from "@/components/PageTitle/PageTitle"
+import { CrewSlider } from "@/components/CrewSlider/CrewSlider"
+
+
+export default function Destination() {
+	return (
+		<main className={styles.crewPageContainer}>
+			<div className={styles.content}>
+				<PageTitle titleId="02" titleText="Meet your crew"/>
+				<CrewSlider />
+			</div>
+		</main>
+	)
+}
