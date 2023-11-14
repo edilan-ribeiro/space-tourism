@@ -28,7 +28,7 @@ export const CrewSlider = () => {
 			{crewData.map(
 				(crew, index) =>
 					index === slide && (
-						<div className={styles.contentBox}>
+						<div key={index} className={styles.contentBox}>
 							<div>
 								<div className={styles.crewTitles}>
 									<h2>{crew.role}</h2>

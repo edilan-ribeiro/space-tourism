@@ -36,7 +36,7 @@ export const DestinationSlider = () => {
 				{destinationsData.map(
 					(destinations, index) =>
 						index === slide && (
-							<div className={styles.contentBox}>
+							<div key={index} className={styles.contentBox}>
 								<div className={styles.imageSide}>
 									<Image
 										src={destinations.images.webp}
