@@ -1,0 +1,31 @@
+//SCREEN SIZES
+$desk-fullhd: 1920px; //1920x1080
+$desk-default: 1440px; //1440x900
+$laptop: 1366px; //1366x768
+$tablet: 768px; //768x1024
+$mobile: 375px; //375x812
+
+@mixin desk-def{
+    @media (max-width: $desk-default) {
+        @content
+    }
+};
+
+@mixin laptop{
+    @media (max-width: $laptop) {
+        @content
+    }
+};
+
+@mixin tablet{
+    @media (max-width: $tablet) {
+        @content
+    }
+};
+
+@mixin mobile{
+    @media (max-width: $mobile) {
+        @content
+    }
+};
+
