@@ -1,95 +1,93 @@
-@use '@/styles/variables';
-@use '@/styles/partials/animations';
+@use '@/styles/partials' as *;
 
 .header {
-    width: 100%;
-    height: 95px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 1.6rem;
-    margin-top: 40px;
-    padding: 0 0 0 65px;
-    text-transform: uppercase;
-    position: fixed;
+	width: 100%;
+	height: 95px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-size: 1.6rem;
+	margin-top: 40px;
+	padding: 0 0 0 65px;
+	text-transform: uppercase;
+	position: fixed;
 }
 
-.navContainer{
-    display: flex;
-    height: 100%;
+.navContainer {
+	display: flex;
+	height: 100%;
 }
 
 .navMenu {
-    display: flex;
-    color: variables.$white;
-    font-family: variables.$barlowC;
-    letter-spacing: 2.7px;
-    height: 100%;
-    align-items: center;
-    padding: 0 9% 0 6%;
-    background-color: rgba(255, 255, 255, 0.04);
-    backdrop-filter: blur(40.774227142333984px);
-    position: relative;
+	display: flex;
+	color: $light;
+	font-family: $barlowC;
+	letter-spacing: 2.7px;
+	height: 100%;
+	align-items: center;
+	padding: 0 9% 0 6%;
+	background-color: rgba(255, 255, 255, 0.04);
+	backdrop-filter: blur(40.774227142333984px);
+	position: relative;
 
-    @media(max-width: 1290px) {
-        height: 90%;
-    }
+	> span {
+		width: 100%;
+		left: -98%;
+		height: 1px;
+		opacity: 0.2515;
+		background: $light;
+		position: absolute;
+		z-index: 5;
+		transition: 0.2s ease-in-out;
 
-    >span {
-        width: 60%;
-        height: 1px;
-        opacity: 0.2515;
-        background: #FFF;
-        position: absolute;
-        z-index: 5;
-        left: -57%;
-        transition: 0.2s ease-in-out;
+		@include desk-def {
+			width: 60%;
+			left: -57%;
+		}
 
-        
-        @media(max-width: 1420px) {
-            width: 50%;
-            left: -48%;
-        }
-        
-        @media(max-width: 1320px) {
-            width: 30%;
-            left: -28%;
-        }
+		@include laptop {
+			width: 51%;
+			left: -49%;
+		}
 
-        @media(max-width: 1120px) {
-            width: 20%;
-            left: -18%;
-        }
+		@include tablet {
+			display: none;
+		}
 
-        @media( max-width: variables.$tablet-breakpoint){
-            display: none;
-        }
+		@include mobile {
+			display: none;
+		}
+	}
 
-    }
+	ul {
+		display: flex;
 
-    ul{
-       display: flex;
-       @media(max-width: 1290px) {
-            transform: scale(0.9);
-            font-size: 1.4rem;
-        }
-       
-       li{
-        height: 95px;
-        margin-right: 50px;
-        display: flex;
-        align-items: center;
-        @media(max-width: 1290px) {
-            transform: scale(1);
-            font-size: 1.4rem;
-        }
+		li {
+			height: 95px;
+			margin-right: 50px;
+			display: flex;
+			align-items: center;
 
-        span {
-            font-weight: 700;
-            margin-right: 10px;
-        }
-       }
-    }
+			span {
+				font-weight: 700;
+				margin-right: 10px;
+			}
+		}
+	}
 
-    @include animations.menuAnimation;
+	.activeNav {
+		&::before {
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 3px;
+			bottom: 0;
+			left: 0;
+			transform: scaleX(1);
+			background-color: $light;
+			transition: 0.28s ease-in-out;
+		}
+	}
+
+	@include menuAnimation;
 }
