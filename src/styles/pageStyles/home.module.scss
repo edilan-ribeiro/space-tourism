@@ -1,20 +1,16 @@
-@use "../variables";
-@use "../partials/titles";
-@use "../partials/paragraphs";
-@use "../partials/containers";
-@use "@/styles/partials/animations";
+@use '@/styles/partials' as *;
 
 @mixin homeBg {
-	background-image: variables.$bg-home-desktop;
+	background-image: $bg-home-desktop;
 	background-repeat: no-repeat;
 	background-size: cover;
 
-	@media (max-width: 768px) {
-		background-image: variables.$bg-home-tablet;
+	@include tablet {
+		background-image: $bg-home-tablet;
 	}
 
-	@media (max-width: 375px) {
-		background-image: variables.$bg-home-mobile;
+	@include mobile {
+		background-image: $bg-home-mobile;
 	}
 }
 
@@ -28,35 +24,27 @@
 
 //CONTAINERS
 
-.mainContainer {
-	@include containers.flex-items-center;
-	gap: 59%;
-	margin: 400px 0 130px 145px;
+.homeContentBox {
+	@include flex-items-center;
+	gap: 90%;
+	margin: 400px 0 130px;
 	transition: 0.1s ease-in-out;
+	padding-left: 188px;
 
-	@media (min-width: 1660px) {
-		gap: 80%;
-	}
-
-	@media (min-width: 1520px) {
-		gap: 68%;
-	}
-
-	@media (max-width: 1350px) {
+	@include desk-def {
 		gap: 50%;
 	}
 
-	@media (max-width: 1270px) {
-		gap: 35%;
+	@include laptop {
+		gap: 40%;
 	}
 
-	@media (max-width: 1160px) {
-		gap: 28%;
-		transform: scale(0.85);
+	@include tablet {
+		display: none;
 	}
 
-	@media (max-width: 1080px) {
-		gap: 23%;		
+	@include mobile {
+		display: none;
 	}
 }
 
@@ -64,18 +52,18 @@
 	margin-top: 100px;
 
 	.link {
-		@include containers.flex-all-center;
+		@include flex-all-center;
 		width: 274px;
 		height: 274px;
 		border-radius: 50%;
-		background-color: variables.$white;
-		color: variables.$dark-active-text;
-		font-family: variables.$bellefair;
+		background-color: $light;
+		color: $dark;
+		font-family: $bellefair;
 		font-size: 32px;
 		letter-spacing: 2px;
 		text-align: center;
 		text-transform: uppercase;
-		outline: solid 5px transparent;		
+		outline: solid 5px transparent;
 
 		&:hover {
 			outline: solid 75px (rgba(255, 255, 255, 0.1036));
@@ -85,10 +73,8 @@
 	}
 }
 
-//TITLE
-
 .homeHeadingBigWord {
-	@include titles.headings;
+	@include headings;
 	font-size: 15rem;
 	padding: 24px 0;
 	display: flex;
@@ -96,6 +82,6 @@
 }
 
 .homeHeadingSmallWord {
-	@include titles.pagesTitle;
-	color: variables.$light-blue;
+	@include pagesTitle;
+	color: $half-light;
 }

@@ -4,7 +4,7 @@ import Link from "next/link"
 export default function Home() {
 	return (
 		<div className={styles.home}>
-			<div className={styles.mainContainer}>
+			<div className={styles.homeContentBox}>
 				<div className={styles.leftContainer}>
 					<h1 className={styles.homeHeadingSmallWord}>
 						So, you want to travel to
