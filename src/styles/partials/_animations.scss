@@ -1,4 +1,4 @@
-@use '../variables';
+@use './variables' as v;
 
 //HOME PULSE
 
@@ -23,7 +23,7 @@
 		cursor: pointer;
 		position: relative;
 		&:hover {
-			color: variables.$white;
+			color: v.$light;
 		}
 	}
 
@@ -35,14 +35,14 @@
 		bottom: 0;
 		left: 0;
 		transform: scaleX(0);
-		background-color: white;
+		background-color: v.$light;
 		transform-origin: bottom left;
 		transition: 0.28s ease-in-out;
 	}
 
 	li:hover::before {
 		transform: scaleX(1);
-	}	
+	}
 }
 
 //SLIDE FADE ANIMATION

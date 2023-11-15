@@ -1,9 +1,9 @@
-@use "../variables";
+@use "./variables" as v;
 
 .mainText {
     width: 445px;
 	color: #d0d6f9;
-	font-family: variables.$barlowReg;
+	font-family: v.$barlowReg;
 	font-size: 18px;
 	font-style: normal;
 	font-weight: 400;

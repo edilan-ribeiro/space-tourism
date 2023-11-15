@@ -1,14 +1,14 @@
-@use "../variables";
+@use "./variables" as v;
 
 @mixin headings {
-	color: variables.$white;
-	font-family: variables.$bellefair;
+	color: v.$light;
+	font-family: v.$bellefair;
 	text-transform: uppercase;
 }
 
 @mixin pagesTitle {
-	color: variables.$white;
-	font-family: variables.$barlowC;
+	color: v.$light;
+	font-family: v.$barlowC;
 	text-transform: uppercase;
 	font-size: 2.8rem;
 	letter-spacing: 4.725px;
