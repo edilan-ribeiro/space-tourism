@@ -8,7 +8,7 @@
 	justify-content: space-between;
 	font-size: 1.6rem;
 	margin-top: 40px;
-	padding: 0 0 0 65px;
+	padding-left: 65px;
 	text-transform: uppercase;
 	position: fixed;
 }
@@ -19,6 +19,7 @@
 }
 
 .navMenu {
+	@include menuAnimation;
 	display: flex;
 	color: $light;
 	font-family: $barlowC;
@@ -39,19 +40,6 @@
 		position: absolute;
 		z-index: 5;
 		transition: 0.2s ease-in-out;
-
-		@include desk {
-			width: 60%;
-			left: -57%;
-		}
-
-		@include tablet {
-			display: none;
-		}
-
-		@include mobile {
-			display: none;
-		}
 	}
 
 	ul {
@@ -83,6 +71,46 @@
 			transition: 0.28s ease-in-out;
 		}
 	}
-
-	@include menuAnimation;
 }
+
+@include desk {
+	.navMenu {
+		> span {
+			width: 60%;
+			left: -57%;
+		}
+	}
+}
+
+@include tablet {
+	.header {
+		margin-top: 0;
+		padding-left: 40px;
+	}
+
+	.navMenu {
+		font-size: 1.4rem;
+		letter-spacing: 2.362px;
+		padding: 0 13px 0 50px;
+
+		> span {
+			display: none;
+		}
+
+		ul {
+			margin-right: 0;
+
+			li {
+				margin-right: 37px;
+
+				span {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+// @include mobile {
+// 	display: none;
+// }

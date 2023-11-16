@@ -19,12 +19,21 @@
 		font-weight: 700;
 		opacity: 0.25;
 
-		@include bp.tablet {
-			display: none;
-		}
-
 		@include bp.mobile {
 			display: none;
 		}
+	}
+
+	@include bp.tablet {
+		font-size: 2rem;
+		letter-spacing: 3.375px;
+
+		span {
+			margin-right: 19px;
+		}
+	}
+
+	@include bp.mobile {
+		
 	}
 }

@@ -25,19 +25,6 @@
 	gap: 90%;
 	margin: 400px 0 130px;
 	padding-left: 188px;
-
-	@include desk {
-		gap: 50%;
-		margin-bottom: 180px;
-	}
-
-	@include tablet {
-		display: none;
-	}
-
-	@include mobile {
-		display: none;
-	}
 }
 
 .rightContainer {
@@ -77,3 +64,35 @@
 	@include pagesTitle;
 	color: $half-light;
 }
+
+@include tablet {
+	.homePageContainer {
+		justify-content: center;
+		align-items: center;
+	}
+
+	.homeContentBox {
+		margin: 105px 130px 0;
+		padding-left: 0;
+		flex-direction: column;
+
+		.homeHeadingSmallWord {
+			text-align: center;
+		}
+	
+		.rightContainer {
+			margin-top: 100px;
+	
+			.link {
+				width: 242px;
+				height: 242px;
+			}
+		}
+	}
+
+
+}
+
+// @include mobile {
+// 	display: none;
+// }

@@ -1,9 +1,9 @@
-"use client"
+'use client'
 
-import styles from "./CrewSlider.module.scss"
-import data from "@/data/data.json"
-import Image from "next/image"
-import { useState } from "react"
+import styles from './CrewSlider.module.scss'
+import data from '@/data/data.json'
+import Image from 'next/image'
+import { useState } from 'react'
 
 export const CrewSlider = () => {
 	interface dataText {
@@ -28,13 +28,24 @@ export const CrewSlider = () => {
 			{crewData.map(
 				(crew, index) =>
 					index === slide && (
-						<div key={index} className={styles.contentBox}>
+						<div key={index} className={styles.innerContentBox}>
 							<div className={styles.crewInfo}>
-								<div className={styles.crewTitles}>
-									<h2>{crew.role}</h2>
-									<h3>{crew.name}</h3>
+								<div className={styles.crewTextContainer}>
+									<div className={styles.crewTitles}>
+										<h2>{crew.role}</h2>
+										<h3>{crew.name}</h3>
+									</div>
+									<p className={styles.mainText}>{crew.bio}</p>
 								</div>
-								<p className={styles.mainText}>{crew.bio}</p>
+								<ul className={styles.crewNav}>
+									{crewData.map((nav, index) => (
+										<li
+											key={index}
+											onClick={() => handleNav(index)}
+											className={index === slide ? styles.activeNav : ''}
+										/>
+									))}
+								</ul>
 							</div>
 							<div className={styles.imageContainer}>
 								<Image
@@ -47,17 +58,6 @@ export const CrewSlider = () => {
 						</div>
 					)
 			)}
-
-			<ul className={styles.creNav}>
-				{crewData.map((nav, index) => (
-					<li
-						key={index}
-						onClick={() => handleNav(index)}
-						className={index === slide ? styles.activeNav : ''}
-					/>
-					
-				))}
-			</ul>
 		</>
 	)
 }

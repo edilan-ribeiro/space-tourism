@@ -20,7 +20,7 @@
 	justify-content: center;
 }
 
-.contentBox {
+.outerContentBox {
 	@include content-box;
 	width: 80vw;
 
@@ -31,7 +31,8 @@
 	}
 
 	@include tablet {
-		display: none;
+		width: 100vw;
+		margin: 150px 40px 0;
 	}
 
 	@include mobile {

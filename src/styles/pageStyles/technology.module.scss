@@ -15,13 +15,11 @@
 }
 
 .technologyPageContainer {
-	width: 100vw;
-	height: 100vh;
+	@include page-container;
 	@include technologyBg;
-	@include flex-all-center;
 }
 
-.contentBox {
+.outerContentBox {
 	@include content-box;
 	width: 100vw;
 	padding-left: 188px;
@@ -32,10 +30,11 @@
 	}
 
 	@include tablet {
-		display: none;
+		margin: 150px 40px 0;
+		padding-left: 0;
 	}
 
-	@include mobile {
-		display: none;
-	}
+	// @include mobile {
+	// 	display: none;
+	// }
 }

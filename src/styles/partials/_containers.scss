@@ -1,3 +1,5 @@
+@use './breakpoints' as bp;
+
 @mixin flex-items-center {
 	display: flex;
 	align-items: center;
@@ -23,4 +25,8 @@
 @mixin content-box {
 	height: 78vh;
 	margin-top: 200px;
+
+	@include bp.tablet{
+		margin-top: 150px;
+	}
 }

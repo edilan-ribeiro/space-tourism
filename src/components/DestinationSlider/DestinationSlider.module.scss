@@ -1,24 +1,9 @@
 @use '@/styles/partials' as *;
 
-.contentBox {
+.innerContentBox {
 	display: flex;
 	gap: 36%;
 	margin-top: 65px;
-
-	@include desk {
-		gap: 20%;
-		transform: scale(0.8);
-		margin-left: -80px;
-		margin-top: 35px;
-	}
-
-	@include tablet {
-		display: none;
-	}
-
-	@include mobile {
-		display: none;
-	}
 }
 
 .imageSide {
@@ -29,7 +14,6 @@
 
 .nav {
 	@include menuAnimation;
-
 	display: flex;
 	height: 34px;
 	gap: 36px;
@@ -45,17 +29,6 @@
 
 	@if #{&} == attr(data-slide) {
 		transform: scaleX(1);
-	}
-
-	@include desk {
-	}
-
-	@include tablet {
-		display: none;
-	}
-
-	@include mobile {
-		display: none;
 	}
 }
 
@@ -91,5 +64,96 @@
 			margin-top: 12px;
 		}
 	}
+
 	animation: slideFade ease-in-out 0.7s;
 }
+
+@include desk {
+	.innerContentBox {
+		gap: 20%;
+		transform: scale(0.8);
+		margin-left: -80px;
+		margin-top: 35px;
+
+		@include tablet {
+			flex-direction: column;
+			transform: scale(1);
+			margin-left: 0;
+			margin-top: 60px;
+			align-items: center;
+
+			p {
+				padding: 0 30px;
+			}
+		}
+	}
+}
+
+@include tablet {
+	.innerContentBox {
+		flex-direction: column;
+		transform: scale(1);
+		margin-left: 0;
+		margin-top: 60px;
+		align-items: center;
+
+		p {
+			padding: 0 30px;
+		}
+	}
+
+	.imageSide {
+		margin-left: 0;
+		margin-top: 0;
+		img {
+			width: 300px;
+			height: 300px;
+		}
+	}
+
+	.nav {
+		justify-content: center;
+		margin-top: 55px;
+
+		li:hover::before {
+			transform: scaleX(0);
+		}
+	}
+
+	.infoSide {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		.destinationTitle {
+			font-size: 8rem;
+		}
+
+
+		p {
+			width: 573px;
+		}
+
+
+		span {
+			width: 90%;
+		}
+
+		.travelInfo {
+			h3 {
+				font-size: 1.4rem;
+				letter-spacing: 2.362px;
+				color: $half-light;
+				text-align: center;
+			}
+
+			h4{
+				text-align: center;
+			}
+		}
+	}
+}
+
+// @include mobile {
+// 	display: none;
+// }

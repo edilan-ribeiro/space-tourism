@@ -1,11 +1,18 @@
 @use "./variables" as v;
+@use './breakpoints' as bp;
 
 .mainText {
     width: 445px;
 	color: #d0d6f9;
 	font-family: v.$barlowReg;
-	font-size: 18px;
+	font-size: 1.8rem;
 	font-style: normal;
 	font-weight: 400;
 	line-height: 32px;
+
+	@include bp.tablet {
+		text-align: center;
+		line-height: 2.8rem;
+		font-size: 1.6rem;
+	}
 }
