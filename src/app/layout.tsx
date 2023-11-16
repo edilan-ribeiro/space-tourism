@@ -27,6 +27,9 @@ const barlow = Barlow({
 export const metadata: Metadata = {
 	title: "Space tourism",
 	description: "Space tourism multi-page website",
+	icons: {
+		icon: '/assets/favicon-32x32.png',
+	  },
 }
 
 export default function RootLayout({
