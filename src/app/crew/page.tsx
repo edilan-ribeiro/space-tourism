@@ -6,7 +6,7 @@ import { CrewSlider } from "@/components/CrewSlider/CrewSlider"
 export default function Destination() {
 	return (
 		<main className={styles.crewPageContainer}>
-			<div className={styles.content}>
+			<div className={styles.contentBox}>
 				<PageTitle titleId="02" titleText="Meet your crew"/>
 				<CrewSlider />
 			</div>

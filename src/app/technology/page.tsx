@@ -5,7 +5,7 @@ import {TechonologySlider} from "@/components/TechnologySlider/TechonologySlider
 export default function Technology() {
 	return (
 		<main className={styles.technologyPageContainer}>
-			<div className={styles.content}>
+			<div className={styles.contentBox}>
 				<PageTitle titleId="03" titleText="SPACE LAUNCH 101" />
 				<TechonologySlider />
 			</div>
