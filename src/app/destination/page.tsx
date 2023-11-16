@@ -5,7 +5,7 @@ import {DestinationSlider} from "@/components/DestinationSlider/DestinationSlide
 export default function Destination() {
 	return (
 		<main className={styles.destinationPageContainer}>
-			<div className={styles.contentBox}>
+			<div className={styles.outerContentBox}>
 				<PageTitle titleId="01" titleText="Pick your destination"/>
 				<DestinationSlider />
 			</div>
