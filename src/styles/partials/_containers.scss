@@ -1,18 +1,26 @@
-@mixin flex-only {
-    display:flex;
-}
-
-@mixin items-center {
-    align-items: center;
-}
-
 @mixin flex-items-center {
-    @include flex-only;
-    @include items-center;
+	display: flex;
+	align-items: center;
+}
+
+@mixin flex-justify-center {
+	display: flex;
+	justify-content: center;
 }
 
 @mixin flex-all-center {
-    @include flex-only;
-    @include items-center;
-    justify-content: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@mixin page-container {
+	width: 100vw;
+	height: 100vh;
+	@include flex-justify-center;
+}
+
+@mixin content-box {
+	height: 78vh;
+	margin-top: 200px;
 }
