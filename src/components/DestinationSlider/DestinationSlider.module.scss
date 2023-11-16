@@ -3,16 +3,13 @@
 .contentBox {
 	display: flex;
 	gap: 36%;
-	flex-shrink: 1;
-	animation: slideFade ease-in-out 1s;
+	margin-top: 65px;
 
-	@include desk-def {
-		gap: 11%;
-	}
-
-	@include laptop {
-		transform: scale(0.9);
-		gap: 9.5%;
+	@include desk {
+		gap: 20%;
+		transform: scale(0.8);
+		margin-left: -80px;
+		margin-top: 35px;
 	}
 
 	@include tablet {
@@ -27,10 +24,7 @@
 .imageSide {
 	margin-top: 28px;
 	margin-left: 70px;
-
-	@include laptop {
-		margin-left: 35px;
-	}
+	animation: slideFade ease-in-out 0.7s;
 }
 
 .nav {
@@ -38,15 +32,12 @@
 
 	display: flex;
 	height: 34px;
-	justify-content: flex-end;
 	gap: 36px;
 	color: $half-light;
 	font-family: $barlowC;
 	letter-spacing: 2.7px;
 	font-size: 1.6rem;
 	text-transform: uppercase;
-	margin-top: 64px;
-	padding-right: 11.5%;
 
 	.activeNav::before {
 		transform: scaleX(1);
@@ -56,12 +47,7 @@
 		transform: scaleX(1);
 	}
 
-	@include desk-def {
-		padding-right: 18.8%;
-	}
-
-	@include laptop {
-		padding-right: 20%;
+	@include desk {
 	}
 
 	@include tablet {
@@ -78,10 +64,6 @@
 		@include headings;
 		font-size: 10rem;
 		margin-top: 37px;
-
-		@include laptop {
-			margin-top: 0;
-		}
 	}
 
 	span {
@@ -109,4 +91,5 @@
 			margin-top: 12px;
 		}
 	}
+	animation: slideFade ease-in-out 0.7s;
 }
