@@ -1,17 +1,16 @@
-@use '../variables';
-@use '../partials/containers';
+@use '@/styles/partials' as *;
 
 @mixin technologyBg {
-	background-image: variables.$bg-technology-desktop;
+	background-image: $bg-technology-desktop;
 	background-repeat: no-repeat;
 	background-size: cover;
 
 	@media (max-width: 768px) {
-		background-image: variables.$bg-technology-tablet;
+		background-image: $bg-technology-tablet;
 	}
 
 	@media (max-width: 375px) {
-		background-image: variables.$bg-technology-mobile;
+		background-image: $bg-technology-mobile;
 	}
 }
 
@@ -19,22 +18,24 @@
 	width: 100vw;
 	height: 100vh;
 	@include technologyBg;
-	@include containers.flex-all-center;
+	@include flex-all-center;
 }
 
-.content {
+.contentBox {
+	@include content-box;
 	width: 100vw;
-	height: 78vh;
-	overflow: visible;
-	margin-top: 200px;
-	padding-left: 165px;
+	padding-left: 188px;
 
-	@media (max-width: 1350px) {
-		width: 90vw;
-		margin-left: 50px;
+	@include desk {
+		height: 74vh;
+		padding-left: 180px;
 	}
-	@media (max-width: 1150px) {
-		width: 100vw;
-		margin-left: 0;
+
+	@include tablet {
+		display: none;
+	}
+
+	@include mobile {
+		display: none;
 	}
 }
