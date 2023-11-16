@@ -1,39 +1,45 @@
-@use '../variables';
-@use '../partials/containers';
+@use '@/styles/partials' as *;
 
 @mixin crewBg {
-	background-image: variables.$bg-crew-desktop;
+	background-image: $bg-crew-desktop;
 	background-repeat: no-repeat;
 	background-size: cover;
 
 	@media (max-width: 768px) {
-		background-image: variables.$bg-crew-tablet;
+		background-image: $bg-crew-tablet;
 	}
 
 	@media (max-width: 375px) {
-		background-image: variables.$bg-crew-mobile;
+		background-image: $bg-crew-mobile;
 	}
 }
 
 .crewPageContainer {
 	width: 100vw;
 	height: 100vh;
+	overflow: hidden;
 	@include crewBg;
-	@include containers.flex-all-center;
+	@include flex-all-center;
 }
 
 .content {
 	width: 80vw;
 	height: 78vh;
-	overflow: visible;
 	margin-top: 200px;
 
-	@media (max-width: 1350px) {
-		width: 90vw;
-		margin-left: 50px;
+	@include desk-def {
+		padding-left: 36px;
 	}
-	@media (max-width: 1150px) {
-		width: 100vw;
-		margin-left: 0;
+
+	@include laptop {
+		padding-left: 55px;
+	}
+
+	@include tablet {
+		display: none;
+	}
+
+	@include mobile {
+		display: none;
 	}
 }

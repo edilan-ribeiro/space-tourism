@@ -29,7 +29,7 @@ export const CrewSlider = () => {
 				(crew, index) =>
 					index === slide && (
 						<div key={index} className={styles.contentBox}>
-							<div>
+							<div className={styles.crewInfo}>
 								<div className={styles.crewTitles}>
 									<h2>{crew.role}</h2>
 									<h3>{crew.name}</h3>

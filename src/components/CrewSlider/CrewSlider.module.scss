@@ -1,63 +1,82 @@
-@use "@/styles/variables";
-@use "@/styles/partials/animations";
-@use "@/styles/partials/titles";
-@use "@/styles/partials/paragraphs";
+@use '@/styles/partials' as *;
 
 .contentBox {
-	display: flex;
-	gap: 15%;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 25%;
 	animation: slideFade ease-in-out 0.7s;
 
-	@media (min-width: 1560px) {
-		gap: 20%;
+	@include desk-def {
+		gap: 2%;
 	}
 
-	@media (min-width: 1660px) {
-		gap: 25%;
+	@include laptop {
+		gap: 1%;
 	}
 
-	@media (max-width: 1415px) {
-		gap: 10%;
+	@include tablet {
+		display: none;
+	}
+
+	@include mobile {
+		display: none;
 	}
 }
 
-.crewTitles {
-	@include titles.headings;
+.crewInfo {
+	margin-top: 155px;
 
-	h2 {
-		font-size: 3.2rem;
-		opacity: 0.5042;
-		margin-top: 155px;
+	.crewTitles {
+		@include headings;
+
+		h2 {
+			font-size: 3.2rem;
+			opacity: 0.5042;
+			width: 620px;
+		}
+
+		h3 {
+			margin-top: 15px;
+			margin-bottom: 30px;
+			font-size: 5.6rem;
+		}
 	}
 
-	h3 {
-		margin-top: 15px;
-		margin-bottom: 30px;
-		font-size: 5.6rem;
+	@include desk-def {
+		margin-top: 180px;
+	}
+
+	@include laptop {
+		margin-top: 100px;
 	}
 }
 
 .imageContainer {
-	margin-top: -45px;
-	max-width: 668px;
-	height: 728px;
-	overflow: hidden;
+	height: 800px;
+	overflow: visible;
 
-	img{
-		width: 100%;
+	img {
+		width: auto;
+		margin-top: -14px;
+	}
+
+	@include laptop {
+		height: 700px;
+		margin-left: -30px;
 	}
 }
 
 .creNav {
 	display: flex;
 	gap: 33px;
-	margin-top: -110px;
+	z-index: 5;
+	margin-top: -220px;
 
 	li {
 		width: 15px;
 		height: 15px;
 		border-radius: 50%;
-		background-color: variables.$white;
+		background-color: $light;
 		cursor: pointer;
 		opacity: 0.2;
 	}
@@ -65,5 +84,9 @@
 	.activeNav {
 		opacity: 1;
 		transition: 0.3s ease-in-out;
+	}
+
+	@include desk-def {
+		margin-top: -240px;
 	}
 }
