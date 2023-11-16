@@ -52,7 +52,7 @@ export const TechonologySlider = () => {
 			{techData.map(
 				(tech, index) =>
 					index === slide && (
-						<div key={index} className={styles.contentBox}>
+						<div key={index} className={styles.techContentBox}>
 							<div>
 								<div className={styles.techTitles}>
 									<h2>The therminology...</h2>
