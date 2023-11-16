@@ -14,29 +14,21 @@
 	}
 }
 
-.home {
-	width: 100vw;
-	height: 100vh;
-	display: flex;
-	align-items: center;
+.homePageContainer {
+	@include page-container;
 	@include homeBg;
+	justify-content: unset;
 }
-
-//CONTAINERS
 
 .homeContentBox {
 	@include flex-items-center;
 	gap: 90%;
 	margin: 400px 0 130px;
-	transition: 0.1s ease-in-out;
 	padding-left: 188px;
 
-	@include desk-def {
+	@include desk {
 		gap: 50%;
-	}
-
-	@include laptop {
-		gap: 40%;
+		margin-bottom: 180px;
 	}
 
 	@include tablet {

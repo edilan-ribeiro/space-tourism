@@ -1,4 +1,5 @@
-@use "./variables" as v;
+@use './variables' as v;
+@use './breakpoints' as bp;
 
 @mixin headings {
 	color: v.$light;
@@ -12,15 +13,18 @@
 	text-transform: uppercase;
 	font-size: 2.8rem;
 	letter-spacing: 4.725px;
-	
 
 	span {
 		margin-right: 28px;
 		font-weight: 700;
 		opacity: 0.25;
+
+		@include bp.tablet {
+			display: none;
+		}
+
+		@include bp.mobile {
+			display: none;
+		}
 	}
 }
-
-//HOME
-
-// PAGES

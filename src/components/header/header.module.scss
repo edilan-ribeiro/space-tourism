@@ -40,14 +40,9 @@
 		z-index: 5;
 		transition: 0.2s ease-in-out;
 
-		@include desk-def {
+		@include desk {
 			width: 60%;
 			left: -57%;
-		}
-
-		@include laptop {
-			width: 51%;
-			left: -49%;
 		}
 
 		@include tablet {

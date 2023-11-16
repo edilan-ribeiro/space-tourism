@@ -15,24 +15,18 @@
 }
 
 .crewPageContainer {
-	width: 100vw;
-	height: 100vh;
-	overflow: hidden;
+	@include page-container;
 	@include crewBg;
-	@include flex-all-center;
+	justify-content: center;
+	overflow: hidden;
 }
 
-.content {
+.contentBox {
+	@include content-box;
 	width: 80vw;
-	height: 78vh;
-	margin-top: 200px;
 
-	@include desk-def {
+	@include desk {
 		padding-left: 36px;
-	}
-
-	@include laptop {
-		padding-left: 55px;
 	}
 
 	@include tablet {

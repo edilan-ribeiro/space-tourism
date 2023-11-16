@@ -15,25 +15,19 @@
 }
 
 .destinationPageContainer {
-	width: 100vw;
-	height: 100vh;
+	@include page-container;
 	@include destinationBg;
-	@include flex-all-center;
+	justify-content: center;
 }
 
-.destinationContentBox{
+.contentBox {
+	@include content-box;
 	width: 80vw;
-	height: 78vh;
-	margin-top: 200px;
 
-	@include desk-def {
+	@include desk {
 		width: 80vw;
-		margin-left: 50px ;
-	}
-
-	@include laptop {
-		width: 80vw;
-		align-content: flex-start;
+		height: 74vh;
+		margin-left: 80px;
 	}
 
 	@include tablet {
@@ -44,4 +38,3 @@
 		display: none;
 	}
 }
-
