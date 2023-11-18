@@ -4,11 +4,11 @@ import {TechonologySlider} from "@/components/TechnologySlider/TechonologySlider
 
 export default function Technology() {
 	return (
-		<main className={styles.technologyPageContainer}>
+		<section className={styles.technologyPageContainer}>
 			<div className={styles.outerContentBox}>
 				<PageTitle titleId="03" titleText="SPACE LAUNCH 101" />
 				<TechonologySlider />
 			</div>
-		</main>
+		</section>
 	)
 }
