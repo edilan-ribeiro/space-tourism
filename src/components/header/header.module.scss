@@ -1,4 +1,6 @@
 @use '@/styles/partials' as *;
+@use 'hamburguer';
+@use 'navMenu';
 
 .header {
 	width: 100%;
@@ -11,66 +13,7 @@
 	padding-left: 65px;
 	text-transform: uppercase;
 	position: fixed;
-}
-
-.navContainer {
-	display: flex;
-	height: 100%;
-}
-
-.navMenu {
-	@include menuAnimation;
-	display: flex;
-	color: $light;
-	font-family: $barlowC;
-	letter-spacing: 2.7px;
-	height: 100%;
-	align-items: center;
-	padding: 0 9% 0 6%;
-	background-color: rgba(255, 255, 255, 0.04);
-	backdrop-filter: blur(40.774227142333984px);
-	position: relative;
-
-	> span {
-		width: 100%;
-		left: -98%;
-		height: 1px;
-		opacity: 0.2515;
-		background: $light;
-		position: absolute;
-		z-index: 5;
-		transition: 0.2s ease-in-out;
-	}
-
-	ul {
-		display: flex;
-
-		li {
-			height: 95px;
-			margin-right: 50px;
-			display: flex;
-			align-items: center;
-
-			span {
-				font-weight: 700;
-				margin-right: 10px;
-			}
-		}
-	}
-
-	.activeNav {
-		&::before {
-			content: '';
-			position: absolute;
-			width: 100%;
-			height: 3px;
-			bottom: 0;
-			left: 0;
-			transform: scaleX(1);
-			background-color: $light;
-			transition: 0.28s ease-in-out;
-		}
-	}
+	z-index: 5;
 }
 
 @include desk {
@@ -87,30 +30,15 @@
 		margin-top: 0;
 		padding-left: 40px;
 	}
+}
 
-	.navMenu {
-		font-size: 1.4rem;
-		letter-spacing: 2.362px;
-		padding: 0 13px 0 50px;
+@include mobile {
+	.header {
+		padding-left: 25px;
 
-		> span {
-			display: none;
-		}
-
-		ul {
-			margin-right: 0;
-
-			li {
-				margin-right: 37px;
-
-				span {
-					display: none;
-				}
-			}
+		img {
+			width: 42px;
+			height: 42px;
 		}
 	}
 }
-
-// @include mobile {
-// 	display: none;
-// }
