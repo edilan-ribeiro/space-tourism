@@ -19,10 +19,6 @@ export const DestinationSlider = () => {
 	const destinationsData: dataText[] = data.destinations
 	const [slide, setSlide] = useState(0)
 
-	const handleNav = (index: number) => {
-		setSlide(index)
-	}
-
 	return (
 		<>
 			{destinationsData.map(
@@ -42,26 +38,28 @@ export const DestinationSlider = () => {
 									{destinationsData.map((nav, index) => (
 										<li
 											key={index}
-											onClick={() => handleNav(index)}
+											onClick={() => setSlide(index)}
 											className={index === slide ? styles.activeNav : ''}
 										>
 											{nav.name}
 										</li>
 									))}
 								</ul>
-								<div  className={styles.infoSide}>
-								<h2 className={styles.destinationTitle}>{destinations.name}</h2>
-								<p className={styles.mainText}>{destinations.description}</p>
-								<span></span>
-								<div className={styles.travelInfo}>
-									<div>
-										<h3>AVG. DISTANCE</h3>
-										<h4>{destinations.distance}</h4>
-									</div>
-									<div>
-										<h3>Est. travel time</h3>
-										<h4>{destinations.travel}</h4>
-									</div>
+								<div className={styles.infoSide}>
+									<h2 className={styles.destinationTitle}>
+										{destinations.name}
+									</h2>
+									<p className={styles.mainText}>{destinations.description}</p>
+									<span></span>
+									<div className={styles.travelInfo}>
+										<div>
+											<h3>AVG. DISTANCE</h3>
+											<h4>{destinations.distance}</h4>
+										</div>
+										<div>
+											<h3>Est. travel time</h3>
+											<h4>{destinations.travel}</h4>
+										</div>
 									</div>
 								</div>
 							</div>

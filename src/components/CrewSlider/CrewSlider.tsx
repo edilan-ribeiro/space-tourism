@@ -19,10 +19,6 @@ export const CrewSlider = () => {
 	const crewData: dataText[] = data.crew
 	const [slide, setSlide] = useState(0)
 
-	const handleNav = (index: number) => {
-		setSlide(index)
-	}
-
 	return (
 		<>
 			{crewData.map(
@@ -41,7 +37,7 @@ export const CrewSlider = () => {
 									{crewData.map((nav, index) => (
 										<li
 											key={index}
-											onClick={() => handleNav(index)}
+											onClick={() => setSlide(index)}
 											className={index === slide ? styles.activeNav : ''}
 										/>
 									))}

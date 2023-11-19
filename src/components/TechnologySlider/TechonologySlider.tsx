@@ -3,7 +3,7 @@
 import styles from './TechonologySlider.module.scss'
 import data from '@/data/data.json'
 import Image from 'next/image'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 export const TechonologySlider = () => {
 	interface dataText {
@@ -19,10 +19,6 @@ export const TechonologySlider = () => {
 	const techData: dataText[] = data.technology
 	const [slide, setSlide] = useState(0)
 
-	const handleNav = (index: number) => {
-		setSlide(index)
-	}
-
 	return (
 		<div>
 			{techData.map(
@@ -34,7 +30,7 @@ export const TechonologySlider = () => {
 									{techData.map((techNav, index) => (
 										<li
 											key={index}
-											onClick={() => handleNav(index)}
+											onClick={() => setSlide(index)}
 											className={index === slide ? styles.activeTechNav : ''}
 										>
 											{techNav.id}
@@ -53,7 +49,7 @@ export const TechonologySlider = () => {
 								<picture>
 									<source
 										srcSet={tech.images.landscape}
-										media="(max-width: 768px)"
+										media="(max-width: 1000px)"
 									/>
 									<Image
 										src={tech.images.portrait}
