@@ -1,10 +1,10 @@
 //SCREEN SIZES
-$desk-default: 1440px;
+$desk-sm: 1600px;
 $tablet: 900px;
 $mobile: 550px; 
 
 @mixin desk {
-	@media (max-width: $desk-default) {
+	@media (max-width: $desk-sm) {
 		@content;
 	}
 }

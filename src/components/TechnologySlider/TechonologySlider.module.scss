@@ -73,6 +73,24 @@
 
 	.techNav {
 		margin-right: 10px;
+		transform: scale(0.7)
+	}
+
+	.techText{
+		transform: scale(0.7);
+	}
+
+	.imageContainer {
+		align-items: center;
+	
+		img {
+			float: right;
+			flex-shrink: 1;
+			height: auto;
+			
+			max-height: 100%;
+			max-width: 100%;
+		}
 	}
 }
 

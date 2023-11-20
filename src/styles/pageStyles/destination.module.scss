@@ -28,11 +28,9 @@
 	@include content-box;
 	width: 80vw;
 
-	// @include desk {
-	// 	width: 80vw;
-	// 	height: 74vh;
-	// 	margin-left: 80px;
-	// }
+	@include desk {
+		margin-left: 80px;
+	}
 
 	@include tablet {
 		width: 100vw;

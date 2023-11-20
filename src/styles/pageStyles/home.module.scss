@@ -64,6 +64,13 @@
 	color: $half-light;
 }
 
+@include desk {
+	.homeContentBox {
+		transform: scale(0.8);
+		gap: 30%;
+	}
+}
+
 @include tablet {
 	.homePageContainer {
 		justify-content: center;
@@ -74,6 +81,7 @@
 		margin: 105px 130px 0;
 		padding-left: 0;
 		flex-direction: column;
+		transform: initial;
 	}
 
 	.homeHeadingSmallWord {
@@ -94,7 +102,6 @@
 }
 
 @include mobile {
-
 	.homePageContainer {
 		height: auto;
 		min-height: 100vh;

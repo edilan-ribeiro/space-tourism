@@ -3,7 +3,7 @@
 .innerContentBox {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	gap: 25%;
+	gap: 18%;
 }
 
 .crewInfo {
@@ -89,7 +89,8 @@
 	}
 
 	.imageContainer {
-		transform: scale(0.9);
+		margin-left: -100px;
+		transform: scale(0.8);
 	}
 }
 

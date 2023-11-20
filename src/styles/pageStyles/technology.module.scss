@@ -29,10 +29,9 @@
 	width: 100vw;
 	padding-left: 188px;
 
-	// @include desk {
-	// 	height: 74vh;
-	// 	padding-left: 180px;
-	// }
+	@include desk {
+		padding-left: 180px;
+	}
 
 	@include tablet {
 		margin-top: 150px;
