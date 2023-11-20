@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import "@/styles/globals.scss"
 import { Bellefair, Barlow_Condensed, Barlow } from "next/font/google"
-import { Header } from "@/components/Header/Header"
+import { Header } from '@/components/Header/Header'
 
 const bellefair = Bellefair({
 	weight: "400",
