@@ -1,14 +1,29 @@
 @use './variables' as v;
+@use './breakpoints' as bp;
 
 //HOME PULSE
 
-@keyframes pulse {
+@keyframes pulse-desktop {
 	0% {
 		box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
 	}
 
 	70% {
-		box-shadow: 0 0 0 80px rgba(255, 255, 255, 0);
+		box-shadow: 0 0 0 100px rgba(255, 255, 255, 0);
+	}
+
+	100% {
+		box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+	}
+}
+
+@keyframes pulse-mobile {
+	0% {
+		box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+	}
+
+	70% {
+		box-shadow: 0 0 0 50px rgba(255, 255, 255, 0);
 	}
 
 	100% {
@@ -28,7 +43,7 @@
 	}
 
 	li::before {
-		content: "";
+		content: '';
 		position: absolute;
 		width: 100%;
 		height: 3px;
@@ -42,6 +57,12 @@
 
 	li:hover::before {
 		transform: scaleX(1);
+	}
+
+	@include bp.mobile {
+		li:hover::before {
+			transform: initial;
+		}
 	}
 }
 
