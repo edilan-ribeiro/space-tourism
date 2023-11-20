@@ -49,7 +49,7 @@ export const TechonologySlider = () => {
 								<picture>
 									<source
 										srcSet={tech.images.landscape}
-										media="(max-width: 1000px)"
+										media="(max-width: 900px)"
 									/>
 									<Image
 										src={tech.images.portrait}
