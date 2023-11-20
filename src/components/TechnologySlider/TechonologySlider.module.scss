@@ -73,21 +73,21 @@
 
 	.techNav {
 		margin-right: 10px;
-		transform: scale(0.7)
+		transform: scale(0.7);
 	}
 
-	.techText{
+	.techText {
 		transform: scale(0.7);
 	}
 
 	.imageContainer {
 		align-items: center;
-	
+
 		img {
 			float: right;
 			flex-shrink: 1;
 			height: auto;
-			
+
 			max-height: 100%;
 			max-width: 100%;
 		}
@@ -108,6 +108,7 @@
 		margin-top: 55px;
 		order: 2;
 		justify-content: center;
+		transform: initial;
 
 		li {
 			width: 60px;
@@ -124,6 +125,7 @@
 	.techText {
 		display: flex;
 		flex-direction: column;
+		transform: initial;
 
 		.techTitles {
 			text-align: center;
