@@ -1,0 +1,27 @@
+@use '@/styles/partials' as *;
+
+.hamburguer {
+	display: none;
+}
+
+@include mobile {
+	.hamburguer {
+		display: block;
+		width: 24px;
+		height: 21px;
+		z-index: 20;
+		background: none;
+		border: none;
+		background-image: url('/assets/shared/icon-hamburger.svg');
+		background-repeat: no-repeat;
+		background-size: contain;
+		position: absolute;
+		right: 30px;
+		transition: 0.2s ease-in-out;
+		cursor: pointer;
+	}
+
+	.hamburguer[data-menuopen='true'] {
+		background-image: url('/assets/shared/icon-close.svg');
+	}
+}
