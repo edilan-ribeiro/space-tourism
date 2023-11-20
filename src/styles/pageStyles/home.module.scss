@@ -17,7 +17,7 @@
 .homePageContainer {
 	@include page-container;
 	@include homeBg;
-	justify-content: unset;
+	justify-content: initial;
 }
 
 .homeContentBox {
@@ -38,7 +38,7 @@
 		background-color: $light;
 		color: $dark;
 		font-family: $bellefair;
-		font-size: 32px;
+		font-size: 3.2rem;
 		letter-spacing: 2px;
 		text-align: center;
 		text-transform: uppercase;
@@ -47,7 +47,7 @@
 		&:hover {
 			outline: solid 75px (rgba(255, 255, 255, 0.1036));
 			transition: 0.3s ease-in-out;
-			animation: pulse 1.7s infinite;
+			animation: pulse-desktop 1.7s infinite;
 		}
 	}
 }
@@ -56,8 +56,7 @@
 	@include headings;
 	font-size: 15rem;
 	padding: 24px 0;
-	display: flex;
-	flex-direction: column;
+	display: block;
 }
 
 .homeHeadingSmallWord {
@@ -75,24 +74,54 @@
 		margin: 105px 130px 0;
 		padding-left: 0;
 		flex-direction: column;
+	}
 
-		.homeHeadingSmallWord {
-			text-align: center;
-		}
-	
-		.rightContainer {
-			margin-top: 100px;
-	
-			.link {
-				width: 242px;
-				height: 242px;
+	.homeHeadingSmallWord {
+		text-align: center;
+	}
+
+	.rightContainer {
+		margin-top: 100px;
+
+		.link {
+			width: 242px;
+			height: 242px;
+			&:hover {
+				outline: solid 40px (rgba(255, 255, 255, 0.1036));
 			}
 		}
 	}
-
-
 }
 
-// @include mobile {
-// 	display: none;
-// }
+@include mobile {
+
+	.homePageContainer {
+		height: auto;
+		min-height: 100vh;
+	}
+
+	.homeContentBox {
+		margin: 50px auto 0;
+	}
+
+	.homeHeadingBigWord {
+		@include headings;
+		font-size: 8rem;
+		padding: 16px 0;
+	}
+
+	.rightContainer {
+		margin-top: 100px;
+
+		.link {
+			font-size: 2rem;
+			width: 150px;
+			height: 150px;
+
+			&:hover {
+				outline: solid 20px (rgba(255, 255, 255, 0.1036));
+				animation: pulse-mobile 1.7s infinite;
+			}
+		}
+	}
+}

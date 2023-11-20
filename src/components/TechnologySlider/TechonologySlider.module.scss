@@ -78,7 +78,7 @@
 
 @include tablet {
 	.techContentBox {
-		margin-top: 110px;
+		margin-top: 60px;
 		flex-direction: column-reverse;
 	}
 
@@ -122,18 +122,60 @@
 	}
 
 	.imageContainer {
-		height: 310px;
-		margin-top: -70px;
-		margin-left: -40px;
-		width: calc(100vw - 80px);
+		height: fit-content;
+		margin-top: 0;
 
 		img {
-			width: 768px;
-			height: 100%;
+			width: 100vw;
+			height: inherit;
 		}
 	}
 }
 
-// @include mobile {
-// 	display: none;
-// }
+@include mobile {
+	.techContentBox {
+		display: flex;
+		margin-top: 30px;
+		justify-content: space-between;
+	}
+
+	.techNav {
+		margin: 26px 0;
+
+		li {
+			width: 40px;
+			height: 40px;
+			font-size: 1.6rem;
+		}
+	}
+
+	.techText {
+		display: flex;
+		flex-direction: column;
+
+		.techTitles {
+			text-align: center;
+
+			h2 {
+				font-size: 1.4rem;
+			}
+
+			h3 {
+				font-size: 2.4rem;
+			}
+		}
+	}
+
+	.imageContainer {
+		height: fit-content;
+		width: 100%;
+		margin: 0;
+
+		img {
+			width: inherit;
+			max-width: 100%;
+			height: 100%;
+			margin: 0;
+		}
+	}
+}

@@ -5,11 +5,11 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 
-	@media (max-width: 768px) {
+	@media (max-width: $tablet) {
 		background-image: $bg-destination-tablet;
 	}
 
-	@media (max-width: 375px) {
+	@media (max-width: $mobile) {
 		background-image: $bg-destination-mobile;
 	}
 }
@@ -17,25 +17,32 @@
 .destinationPageContainer {
 	@include page-container;
 	@include destinationBg;
-	justify-content: center;
+
+	@include mobile {
+		height: fit-content;
+		min-height: 100vh;
+	}
 }
 
 .outerContentBox {
 	@include content-box;
 	width: 80vw;
 
-	@include desk {
-		width: 80vw;
-		height: 74vh;
-		margin-left: 80px;
-	}
+	// @include desk {
+	// 	width: 80vw;
+	// 	height: 74vh;
+	// 	margin-left: 80px;
+	// }
 
 	@include tablet {
 		width: 100vw;
-		margin: 150px 40px 0;
+		margin-top: 150px;
 	}
 
 	@include mobile {
-		display: none;
+		margin-top: 100px;
+		text-align: center;
+		height: fit-content;
+		min-height: 100vh;
 	}
 }

@@ -30,32 +30,10 @@
 			font-size: 5.6rem;
 		}
 	}
-
-	.crewNav {
-		display: flex;
-		gap: 33px;
-		z-index: 5;
-		margin-top: 120px;
-
-		li {
-			width: 15px;
-			height: 15px;
-			border-radius: 50%;
-			background-color: $light;
-			cursor: pointer;
-			opacity: 0.2;
-		}
-
-		.activeNav {
-			opacity: 1;
-			transition: 0.3s ease-in-out;
-		}
-	}
 }
 
 .imageContainer {
 	height: 100vh;
-	overflow: visible;
 	position: relative;
 	animation: slideFade ease-in-out 0.7s;
 
@@ -65,6 +43,27 @@
 		height: 90%;
 		width: auto;
 		object-fit: cover;
+	}
+}
+
+.crewNav {
+	display: flex;
+	gap: 33px;
+	z-index: 5;
+	margin-top: 120px;
+
+	li {
+		width: 15px;
+		height: 15px;
+		border-radius: 50%;
+		background-color: $light;
+		cursor: pointer;
+		opacity: 0.2;
+	}
+
+	.activeNav {
+		opacity: 1;
+		transition: 0.3s ease-in-out;
 	}
 }
 
@@ -94,22 +93,16 @@
 	}
 }
 
-@include desk {
-	.imageContainer {
-		transform: 0.9;
-	}
-}
-
 @include tablet {
 	.innerContentBox {
 		grid-template-columns: 1fr;
 		align-items: center;
-		padding: 10px;
+		height: 100%;
 	}
 
 	.crewInfo {
 		transform: scale(1);
-		margin: 60px 40px;
+		margin: 60px 40px 0;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -130,11 +123,12 @@
 
 		p {
 			width: auto;
+			min-height: 112px;
 		}
 	}
 
 	.crewNav {
-		margin-top: -50px;
+		margin: -50px 0 40px;
 		gap: 25px;
 
 		li {
@@ -144,23 +138,83 @@
 	}
 
 	.imageContainer {
-		height: 42vh;
+		display: flex;
+		height: 100%;
+		min-height: 512px;
 		transform: scale(1);
+		align-self: flex-end;
 		justify-self: center;
 		margin: 0;
 		width: 100%;
+		justify-content: center;
+		align-items: flex-end;
 
 		img {
-			height: 106%;
-			position: absolute;
-			bottom: 0;
+			height: 100%;
+			position: initial;
 			width: auto;
-			left: 50%;
-			transform: translateX(-50%);
 		}
 	}
 }
 
-// @include mobile {
-// 	display: none;
-// }
+@include mobile {
+	.innerContentBox {
+		padding: 0;
+		margin-top: 32px;
+	}
+
+	.imageContainer {
+		order: 1;
+		border-bottom: 1px solid $span;
+		min-height: 350px;
+		height: initial;
+		width: 85%;
+		
+
+		img {
+			height: initial;
+			transform: none;
+			max-width: 230px;
+		}
+	}
+
+	.crewInfo {
+		order: 2;
+		margin: 0;
+		justify-content: unset;
+		height: fit-content;
+
+		.crewTextContainer {
+			order: 3;
+			height: fit-content;
+		}
+
+		.crewTitles {
+			@include headings;
+
+			h2 {
+				font-size: 1.6rem;
+				margin-top: 32px;
+			}
+
+			h3 {
+				margin-top: 8px;
+				margin-bottom: 15px;
+				font-size: 2.4rem;
+			}
+		}
+
+		.crewNav {
+			display: flex;
+			gap: 33px;
+			z-index: 5;
+			margin-top: 32px;
+			order: 2;
+
+			li {
+				width: 10px;
+				height: 10px;
+			}
+		}
+	}
+}
