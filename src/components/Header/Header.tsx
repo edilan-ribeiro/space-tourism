@@ -18,29 +18,32 @@ export const Header = () => {
 	return (
 		<header className={styles.header}>
 			<Link href="/">
-				<Image src={logo} alt="company logo"/>
+				<Image src={logo} alt="company logo" />
 			</Link>
 			<nav className={styles.navMenu} data-visible={isOpen}>
 				<span></span>
 				<ul>
 					{menuItemId.map((id, index) => {
 						return (
-							<Link
-								key={index}
-								href={`/${menuTitle[index] === 'home' ? '' : menuTitle[index]}`}
+							<li
+								className={
+									(menuTitle[index] === 'home'
+										? '/'
+										: `/${menuTitle[index]}`) === pathname
+										? styles.activeNav
+										: ''
+								}
 							>
-								<li
-									className={
-										(menuTitle[index] === 'home'
-											? '/'
-											: `/${menuTitle[index]}`) === pathname
-											? styles.activeNav
-											: ''
-									}
+								<Link
+									key={index}
+									href={`/${
+										menuTitle[index] === 'home' ? '' : menuTitle[index]
+									}`}
+									className={styles.navLink}
 								>
 									<span>{id}</span> {menuTitle[index]}
-								</li>
-							</Link>
+								</Link>
+							</li>
 						)
 					})}
 				</ul>
@@ -49,7 +52,7 @@ export const Header = () => {
 				data-menuopen={isOpen}
 				className={styles.hamburguer}
 				onClick={() => setIsOpen(!isOpen)}
-				title='menu'
+				title="menu"
 				aria-label={`the menu is ${isOpen ? 'open' : 'not open'}`}
 			/>
 		</header>
