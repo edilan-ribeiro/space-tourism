@@ -26,6 +26,7 @@ export const Header = () => {
 					{menuItemId.map((id, index) => {
 						return (
 							<li
+								key={index}
 								className={
 									(menuTitle[index] === 'home'
 										? '/'
@@ -35,7 +36,6 @@ export const Header = () => {
 								}
 							>
 								<Link
-									key={index}
 									href={`/${
 										menuTitle[index] === 'home' ? '' : menuTitle[index]
 									}`}
