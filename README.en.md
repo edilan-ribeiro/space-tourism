@@ -109,10 +109,6 @@ After cloning, downloading, or forking, use the command below to install the pro
 ```shell
 npm install
 ```
-To run the tests use the command:
-```shell
-npm test
-```
 
 This project allows you to:
 - Navigate seamlessly between different pages
